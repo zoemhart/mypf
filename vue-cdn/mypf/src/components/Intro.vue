@@ -1,16 +1,12 @@
 <template>
-  <div class="works">
-    <h1>{{ msg }}</h1>
-    <p>
-      
-    </p>
-
+  <div class="intro">
+  	    <h1>{{ msg }}</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Works',
+  name: 'Intro',
   props: {
     msg: String
   }
@@ -18,5 +14,7 @@ export default {
 </script>
 
 <style>
-  
+ .intro{
+ 	background: hsl(60, 80%, 90);
+ }
 </style>
