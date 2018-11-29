@@ -2,9 +2,9 @@
   <div id="app">
   <h1>zoe</h1>
   <ul id="menu">
-    <li><intro msg="home"/></li>
-    <li><works msg="works"/></li>
-    <li><contact msg="contact me"/></li>
+    <li><intro msg="info"/></li>
+    <li><works msg="portfolio"/></li>
+    <li><contact msg="work with me"/></li>
   </ul>
     
     <contact/>
@@ -28,17 +28,23 @@ export default {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: hsl(40, 50%, 50%);
+  color: hsl(20, 50%, 60%);
   margin-top: 60px;
   background-color: lightgrey;
 }
 
 #menu{
-  list-style: none;
+  list-style-type: none;
+  padding: 0;
+  display: inline-flex;
   border: 1px solid red;
+}
+
+#menu li{
+  padding: 0 2em;
 }
 </style>
