@@ -10,10 +10,11 @@
       </p>
     </header>
 
-    <div id="display">
+    <section id="display">
       <p>placeholder</p>
+      
       <router-view></router-view>
-    </div>
+    </section>
 
   </div>
 </template>
@@ -46,7 +47,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  background: lightgrey;
+  background: black;
   height: 100vh;
   width: 100vw;
 }
@@ -64,31 +65,39 @@ header{
   max-height: 18vh;
   align-self: center;
   justify-self:center;
-  grid-column: 1 / 3;
   grid-row: 1;
+  grid-column: 1 / 3;
 }
 
 #introLink {
   border: 1px solid orange;
-  grid-column: 1 / 3;
   grid-row: 2;
+  grid-column: 1 / 3;
 }
 
 #portfolioLink {
   border: 1px solid red;
-  grid-column: 1 / 2;
   grid-row: 3;
+  grid-column: 1 / 2;
 }
 
 #socialLink {
   border: 1px solid green;
-  grid-column: 2 / 3;
   grid-row: 3;
+  grid-column: 2 / 3;
 }
 
 #display {
-  border:1px solid yellow;
+  background: lightgrey;
   height:70vh;
+  display: grid;
+  grid-template-rows: 1fr;
+}
+
+#display p{
+  border:1px solid yellow;
+  justify-self: center;
+  margin: auto 0;
 }
 
 </style>
