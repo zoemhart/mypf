@@ -12,7 +12,7 @@
 
     <section id="display">
       <p>placeholder</p>
-      
+      <img src="./assets/ex1.jpg" alt="">
       <router-view></router-view>
     </section>
 
@@ -43,61 +43,67 @@ export default {
 
 #app {
   font-family: 'Iosevka', 'Avenir', Arial, sans-serif;
-  font-size: 0.8em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  background: black;
   height: 100vh;
   width: 100vw;
 }
 
 header{
-  background: white;
   height: 30vh;
   display: grid;
   grid-template-rows: 3fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr 2fr 1fr;
 }
 
 #logo {
-  border: 1px solid blue;
   max-height: 18vh;
-  align-self: center;
+  padding-top: 2vh;
   justify-self:center;
   grid-row: 1;
-  grid-column: 1 / 3;
+  grid-column: 1 / 5;
 }
 
 #introLink {
-  border: 1px solid orange;
+  padding-top: 0.7vh;
   grid-row: 2;
-  grid-column: 1 / 3;
+  grid-column: 1 / 5;
 }
 
 #portfolioLink {
-  border: 1px solid red;
-  grid-row: 3;
-  grid-column: 1 / 2;
-}
-
-#socialLink {
-  border: 1px solid green;
+  padding-top: 2vh;
   grid-row: 3;
   grid-column: 2 / 3;
 }
 
+#socialLink {
+  padding-top: 2vh;
+  grid-row: 3;
+  grid-column: 3 / 4;
+}
+
 #display {
-  background: lightgrey;
+  background: beige;
   height:70vh;
   display: grid;
   grid-template-rows: 1fr;
+  overflow: hidden;
 }
 
 #display p{
-  border:1px solid yellow;
-  justify-self: center;
-  margin: auto 0;
+  color: black;
+  font-size: 2em;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  padding:35vh 0;
+  z-index:2;
+}
+
+#display img{
+  opacity: 0.3;
+  height: 70vh;
 }
 
 </style>
