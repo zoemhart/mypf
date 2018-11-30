@@ -1,20 +1,20 @@
 <template>
   <div id="app">
-    <div id="grid">
-        
+
+    <header>  
       <img id="logo" src="./assets/logo.png" alt="">
-
       <p>
-        <router-link id="introLink" to="/Intro"><a>Zoe Azerty</a></router-link>
-        <router-link id="portfolioLink" to="/Portfolio"><a>Portfolio</a></router-link>
-        <router-link id="socialLink" to="/Social"><a>Social</a></router-link>
+        <p id="introLink"><router-link to="/Intro"><a>Zoe Azerty</a></router-link></p>
+        <p id="portfolioLink"><router-link to="/Portfolio"><a>Portfolio</a></router-link></p>
+        <p id="socialLink"><router-link id="socialLink" to="/Social"><a>Social</a></router-link></p>
       </p>
+    </header>
 
-      <div id="display">
-        <router-view></router-view>
-      </div>
-
+    <div id="display">
+      <p>placeholder</p>
+      <router-view></router-view>
     </div>
+
   </div>
 </template>
 
@@ -47,44 +47,48 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   background: lightgrey;
-}
-
-.grid{
-  background: white;
-  display: grid;
   height: 100vh;
   width: 100vw;
-  grid-template-columns: 20% 5% 10% 65%;
-  grid-template-areas: "logo logo"
-                       "introLink introLink"
-                       "portfolioLink socialLink"
-                       "display"
-  ;
+}
+
+header{
+  background: white;
+  height: 30vh;
+  display: grid;
+  grid-template-rows: 3fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 
 #logo {
-  max-width: 10em;
+  border: 1px solid blue;
+  max-height: 18vh;
+  align-self: center;
+  justify-self:center;
+  grid-column: 1 / 3;
+  grid-row: 1;
 }
 
-#introLink{
-  grid-area: introLink;
+#introLink {
   border: 1px solid orange;
+  grid-column: 1 / 3;
+  grid-row: 2;
 }
 
-#portfolioLink{
-  grid-area: portfolioLink;
+#portfolioLink {
   border: 1px solid red;
+  grid-column: 1 / 2;
+  grid-row: 3;
 }
 
-#socialLink{
-  grid-area: socialLink;
+#socialLink {
   border: 1px solid green;
+  grid-column: 2 / 3;
+  grid-row: 3;
 }
 
-#display{
-  grid-area: display;
+#display {
   border:1px solid yellow;
+  height:70vh;
 }
-
 
 </style>
