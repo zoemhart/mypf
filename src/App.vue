@@ -1,44 +1,61 @@
 <template>
   <div id="app">
+    <!--onload="document.app.style.opacity='0'" not sure-->
 
-    <header>  
-      <img id="logo" src="./assets/logo.png" alt="">
-      <p>
-        <p id="introLink"><router-link to="/Intro"><a>Zoe Azerty</a></router-link></p>
-        <p id="portfolioLink"><router-link to="/Portfolio"><a>Portfolio</a></router-link></p>
-        <p id="socialLink"><router-link id="socialLink" to="/Social"><a>Social</a></router-link></p>
+    <header>
+      <div id="logo">
+        <router-link to="/">
+          <img src="./assets/logo.png"/>
+        </router-link>
+      </div>
+
+      <p id="introLink">
+        <router-link to="/">
+          <a>Zoe Azerty</a>
+        </router-link>
+      </p>
+
+      <p id="portfolioLink">
+        <router-link to="/Portfolio">
+          <a>Portfolio</a>
+        </router-link>
+      </p>
+
+      <p id="socialLink">
+        <router-link to="/Social">
+          <a>Social</a>
+        </router-link>
       </p>
     </header>
 
     <section id="display">
-      <p>placeholder</p>
-      <img src="./assets/ex1.jpg" alt="">
-      <router-view></router-view>
+      <router-view/>
     </section>
 
   </div>
 </template>
 
 <script>
-import Intro from './components/Intro.vue'
-import Portfolio from './components/Portfolio.vue'
-import Social from './components/Social.vue'
+import Welcome from './components/Welcome';
+import Portfolio from './components/Portfolio';
+import Social from './components/Social';
 
 export default {
   name: 'app',
   components: {
-    Intro,
+    Welcome,
     Portfolio,
-    Social
-  }
-}
+    Social,
+  },
+};
 </script>
 
 <style>
 * {
-  margin: 0;
-  padding: 0;
+  margin: 0%;
+  padding: 0%;
   box-sizing: border-box;
+  justify-self: center;
 }
 
 #app {
@@ -48,6 +65,9 @@ export default {
   text-align: center;
   height: 100vh;
   width: 100vw;
+  /*opacity:1;
+  transition: opacity 0.2s;
+  -webkit-transition: opacity 0.2s; /* Safari */
 }
 
 header{
@@ -58,27 +78,30 @@ header{
 }
 
 #logo {
-  max-height: 18vh;
-  padding-top: 2vh;
-  justify-self:center;
   grid-row: 1;
   grid-column: 1 / 5;
+  padding-top: 2vh;
+}
+
+#logo img{
+  max-height: 18vh;
+  max-width: 100vw;
 }
 
 #introLink {
-  padding-top: 0.7vh;
+  align-self: top;
   grid-row: 2;
   grid-column: 1 / 5;
 }
 
 #portfolioLink {
-  padding-top: 2vh;
+  align-self: center;
   grid-row: 3;
   grid-column: 2 / 3;
 }
 
 #socialLink {
-  padding-top: 2vh;
+  align-self: center;
   grid-row: 3;
   grid-column: 3 / 4;
 }
@@ -88,11 +111,9 @@ header{
   height:70vh;
   display: grid;
   grid-template-rows: 1fr;
-  overflow: hidden;
 }
 
 #display p{
-  color: black;
   font-size: 2em;
   position: fixed;
   width: 100%;
@@ -103,7 +124,14 @@ header{
 
 #display img{
   opacity: 0.3;
-  height: 70vh;
+  min-width: 100vw;
+  min-height: 100vh;
+  max-width: 150vw;
+  max-height: 150vh;
+  /*TODO: object-fit and center the middle of the pic*/
 }
 
+a{
+  text-decoration: none;
+}
 </style>

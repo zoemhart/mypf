@@ -1,29 +1,32 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Intro from '@/components/Intro';
+import Welcome from '@/components/Welcome';
 import Portfolio from '@/components/Portfolio';
-import Contact from '@/components/Social';
+import Social from '@/components/Social';
+
 Vue.use(Router);
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Intro',
-      component: Intro,
+      redirect: { name: 'Welcome' },
     },
+
     {
-      path: '/Intro',
-      name: 'Intro',
-      component: Intro,
+      path: '/welcome',
+      name: 'Welcome',
+      component: Welcome,
     },
+
     {
-      path: '/Portfolio',
+      path: '/portfolio',
       name: 'Portfolio',
       component: Portfolio,
     },
+
     {
-      path: '/Social',
+      path: '/social',
       name: 'Social',
       component: Social,
     },

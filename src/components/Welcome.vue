@@ -1,15 +1,16 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <p>{{ msg }}</p>
+    <img src="../assets/ex3.png" alt="glitch">
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Social',
+  name: 'Welcome',
   data() {
     return {
-      msg: 'Welcome! to Your Social Page',
+      msg: 'placehold',
     };
   },
 };
